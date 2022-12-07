@@ -24,7 +24,7 @@
     <div id="basic_table"></div>
     <script>
         // sample datasource
-        var basic_records = [{'symbol': 'EVE', 'type': 'Sell', 'KL_dat': -500.0, 'KL_khop': -500.0, 'KL_con': 0.0, 'gia_khop': 13900, 'gia_tri_khop': 6950000, 'phi': -6950, 'is_success': 1, 'tc_percent': 0.0}];
+        var basic_records = [{'symbol': 'EVE', 'type': 'Sell', 'KL_dat': -500.0, 'KL_khop': -500.0, 'KL_con': 0.0, 'gia_khop': 13900, 'gia_tri_khop': 6950000, 'phi': -6950, 'is_success': 1, 'tc_percent': 0.0}, {'symbol': 'PVT', 'type': 'Sell', 'KL_dat': -200.0, 'KL_khop': -200.0, 'KL_con': 0.0, 'gia_khop': 19500, 'gia_tri_khop': 3900000, 'phi': -3900, 'is_success': 1, 'tc_percent': 2.1}];
 
         var basicRowTemplateString = '<tr class="#: "" #" data-uid="#: uid #"><td>#= symbol #</td><td>#= type #</td><td>#= KL_dat #</td><td>#= KL_khop #</td><td>#= KL_con #</td><td>#= gia_khop #</td><td>#= gia_tri_khop #</td><td>#= phi #</td><td>#= is_success #</td><td>#= tc_percent #</td></tr>';
 
@@ -52,7 +52,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS Success Orders at 2022-12-07 09:50:08.295193", "search"],
+                toolbar: ["TCBS Success Orders at 2022-12-07 09:51:06.130721", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
