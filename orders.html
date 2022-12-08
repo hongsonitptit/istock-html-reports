@@ -22,49 +22,10 @@
     </style>
 
     <div id="aggregate_order_table"></div>
-    </br>
-    <div id="order_table"></div>
 
     <script>
         // sample datasource
-        var order_records = [{'symbol': 'NDN', 'type': 'Sell', 'KL_dat': -500.0, 'KL_khop': -500.0, 'KL_con': 0.0, 'gia_khop': 7000, 'gia_tri_khop': 3500000, 'phi': -3500, 'is_success': 1, 'basic_price': 6600.0, 'tc_percent': 6.1}];
-        var aggregate_order_records = [{'symbol': 'NDN', 'total_trading': -500.0, 'phi': -3500, 'PNL': 3496500, 'avg_buy_price': '', 'avg_sell_price': '7000', 'buy_to_basic': '', 'sell_to_basic': '6.1'}];
-
-        var orderRowTemplateString = '<tr class="#: "" #" data-uid="#: uid #"><td>#= symbol #</td><td>#= type #</td><td>#= KL_dat #</td><td>#= KL_khop #</td><td>#= KL_con #</td><td>#= gia_khop #</td><td>#= gia_tri_khop #</td><td>#= phi #</td><td>#= is_success #</td><td>#= basic_price #</td><td>#= tc_percent #</td></tr>';
-
-        // Create the alt row template string. This alt row is the same as the regular row, it simply has one additional class.
-        var basicAltRowTemplateString = orderRowTemplateString.replace('tr class="', 'tr class="k-alt ');
-
-        $(document).ready(function() {
-            $("#order_table").kendoGrid({
-                dataSource: {
-                    data: order_records,
-                    //pageSize: 5,
-                    schema: {
-                        model: {'fields': {'symbol': {}, 'type': {}, 'KL_dat': {'type': 'number'}, 'KL_khop': {'type': 'number'}, 'KL_con': {'type': 'number'}, 'gia_khop': {'type': 'number'}, 'gia_tri_khop': {'type': 'number'}, 'phi': {'type': 'number'}, 'is_success': {'type': 'number'}, 'basic_price': {'type': 'number'}, 'tc_percent': {'type': 'number'}}}
-                    },
-                    aggregate: [{'field': 'gia_tri_khop', 'aggregate': 'sum'}, {'field': 'phi', 'aggregate': 'sum'}, {'field': 'KL_dat', 'aggregate': 'sum'}, {'field': 'KL_khop', 'aggregate': 'sum'}, {'field': 'KL_con', 'aggregate': 'sum'}]
-                },
-                //sortable: true,
-                //pageable: true,
-                filterable: true,
-                sortable: {
-                    mode: "multiple"
-                },
-                dataBound: function() {
-                    for (var i = 0; i < this.columns.length; i++) {
-                        this.autoFitColumn(i);
-                    }
-                },
-                toolbar: ["TCBS Success Orders at 2022-12-08 13:21:06.329204", "search"],
-                search: {
-                    fields: [
-                        { name: "symbol", operator: "contains" },
-                    ]
-                },
-                columns: [{'field': 'symbol', 'title': 'symbol', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'type', 'title': 'type', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'KL_dat', 'title': 'KL_dat', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(KL_dat)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'KL_khop', 'title': 'KL_khop', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(KL_khop)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'KL_con', 'title': 'KL_con', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(KL_con)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'gia_khop', 'title': 'gia_khop', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(gia_khop)#'}, {'field': 'gia_tri_khop', 'title': 'gia_tri_khop', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(gia_tri_khop)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'phi', 'title': 'phi', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(phi)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'is_success', 'title': 'is_success', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(is_success)#'}, {'field': 'basic_price', 'title': 'basic_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(basic_price)#'}, {'field': 'tc_percent', 'title': 'tc_percent', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(tc_percent)#'}],
-            });
-        });
+        var aggregate_order_records = [{'symbol': 'NDN', 'refer_price': 6600.0, 'total_trading': -500.0, 'phi': -3500, 'thue': -350000, 'PNL': 3496500, 'avg_buy_price': '', 'avg_sell_price': '7000', 'buy_to_basic': '', 'sell_to_basic': '6.1'}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -72,9 +33,9 @@
                     data: aggregate_order_records,
                     //pageSize: 5,
                     schema: {
-                        model: {'fields': {'symbol': {}, 'total_trading': {'type': 'number'}, 'phi': {'type': 'number'}, 'PNL': {'type': 'number'}, 'avg_buy_price': {}, 'avg_sell_price': {}, 'buy_to_basic': {}, 'sell_to_basic': {}}}
+                        model: {'fields': {'symbol': {}, 'refer_price': {'type': 'number'}, 'total_trading': {'type': 'number'}, 'phi': {'type': 'number'}, 'thue': {'type': 'number'}, 'PNL': {'type': 'number'}, 'avg_buy_price': {}, 'avg_sell_price': {}, 'buy_to_basic': {}, 'sell_to_basic': {}}}
                     },
-                    aggregate: [{'field': 'PNL', 'aggregate': 'sum'}, {'field': 'phi', 'aggregate': 'sum'}, {'field': 'total_trading', 'aggregate': 'sum'}]
+                    aggregate: [{'field': 'PNL', 'aggregate': 'sum'}, {'field': 'phi', 'aggregate': 'sum'}, {'field': 'thue', 'aggregate': 'sum'}, {'field': 'total_trading', 'aggregate': 'sum'}]
                 },
                 //sortable: true,
                 //pageable: true,
@@ -87,13 +48,13 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS Aggregate Orders at 2022-12-08 13:21:06.329204", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-08 13:22:06.490296", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
                     ]
                 },
-                columns: [{'field': 'symbol', 'title': 'symbol', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'total_trading', 'title': 'total_trading', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_trading)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'phi', 'title': 'phi', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(phi)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'PNL', 'title': 'PNL', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(PNL)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'avg_buy_price', 'title': 'avg_buy_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'avg_sell_price', 'title': 'avg_sell_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'buy_to_basic', 'title': 'buy_to_basic', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'sell_to_basic', 'title': 'sell_to_basic', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}],
+                columns: [{'field': 'symbol', 'title': 'symbol', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'refer_price', 'title': 'refer_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(refer_price)#'}, {'field': 'total_trading', 'title': 'total_trading', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_trading)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'phi', 'title': 'phi', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(phi)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'thue', 'title': 'thue', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(thue)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'PNL', 'title': 'PNL', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(PNL)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'avg_buy_price', 'title': 'avg_buy_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'avg_sell_price', 'title': 'avg_sell_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'buy_to_basic', 'title': 'buy_to_basic', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'sell_to_basic', 'title': 'sell_to_basic', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}],
             });
         });
 
