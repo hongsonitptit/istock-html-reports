@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 11600.0, 'total_trading': -100.0, 'phi': -1235, 'thue': -123500, 'PNL': 1233765, 'avg_buy_price': '', 'avg_sell_price': '12350', 'buy_to_basic': '', 'sell_to_basic': '6.5'}, {'symbol': 'NDN', 'refer_price': 6600.0, 'total_trading': -500.0, 'phi': -3500, 'thue': -350000, 'PNL': 3496500, 'avg_buy_price': '', 'avg_sell_price': '7000', 'buy_to_basic': '', 'sell_to_basic': '6.1'}];
+        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 11600.0, 'total_trading': -200.0, 'phi': -2475, 'thue': -247500, 'PNL': 2472525, 'avg_buy_price': '', 'avg_sell_price': '12375', 'buy_to_basic': '', 'sell_to_basic': '6.7'}, {'symbol': 'NDN', 'refer_price': 6600.0, 'total_trading': -500.0, 'phi': -3500, 'thue': -350000, 'PNL': 3496500, 'avg_buy_price': '', 'avg_sell_price': '7000', 'buy_to_basic': '', 'sell_to_basic': '6.1'}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2022-12-08 13:37:07.448990", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-08 13:38:07.553815", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
