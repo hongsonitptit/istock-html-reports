@@ -27,8 +27,8 @@
 
     <script>
         // sample datasource
-        var table_1_records = [{'symbol': 'HSG', 'total_trading': -100.0, 'phi': -1295.0, 'thue': -1295.0, 'PNL': 1293705.0, 'avg_buy_price': '', 'avg_sell_price': '12950', 'current_price': 12700.0, 'buy_now': '2.0', 'sell_now': ''}, {'symbol': 'NT2', 'total_trading': -100.0, 'phi': -2775.0, 'thue': -2775.0, 'PNL': 2772225.0, 'avg_buy_price': '', 'avg_sell_price': '27750', 'current_price': 28200.0, 'buy_now': '-1.6', 'sell_now': ''}];
-        var table_2_records = [{'symbol': 'HSG', 'total_trading': -400.0, 'phi': -7270.0, 'thue': -6120.0, 'PNL': 4962730.0, 'avg_buy_price': '11500', 'avg_sell_price': '12240', 'current_price': 12750.0, 'buy_now': '-4.0', 'sell_now': '10.9'}, {'symbol': 'NT2', 'total_trading': -100.0, 'phi': -2775.0, 'thue': -2775.0, 'PNL': 2772225.0, 'avg_buy_price': '', 'avg_sell_price': '27750', 'current_price': 28200.0, 'buy_now': '-1.6', 'sell_now': ''}, {'symbol': 'NDN', 'total_trading': -500.0, 'phi': -3500.0, 'thue': -3500.0, 'PNL': 3496500.0, 'avg_buy_price': '', 'avg_sell_price': '7000', 'current_price': 7000.0, 'buy_now': '0.0', 'sell_now': ''}, {'symbol': 'VPB', 'total_trading': 0.0, 'phi': -6415.0, 'thue': -3225.0, 'PNL': 28585.0, 'avg_buy_price': '15950', 'avg_sell_price': '16125', 'current_price': 17250.0, 'buy_now': '-6.5', 'sell_now': '8.2'}, {'symbol': 'VOS', 'total_trading': 0.0, 'phi': -4430.0, 'thue': -2250.0, 'PNL': 65570.0, 'avg_buy_price': '10900', 'avg_sell_price': '11250', 'current_price': 12050.0, 'buy_now': '-6.6', 'sell_now': '10.6'}, {'symbol': 'PVT', 'total_trading': -200.0, 'phi': -3900.0, 'thue': -3900.0, 'PNL': 3896100.0, 'avg_buy_price': '', 'avg_sell_price': '19500', 'current_price': 19800.0, 'buy_now': '-1.5', 'sell_now': ''}, {'symbol': 'EVE', 'total_trading': -500.0, 'phi': -6950.0, 'thue': -6950.0, 'PNL': 6943050.0, 'avg_buy_price': '', 'avg_sell_price': '13900', 'current_price': 13750.0, 'buy_now': '1.1', 'sell_now': ''}];
+        var table_1_records = [{'symbol': 'HSG', 'total_trading': -100.0, 'phi': -1295.0, 'thue': -1295.0, 'PNL': 1293705.0, 'avg_buy_price': '', 'avg_sell_price': '12950', 'current_price': 12850.0, 'buy_now': '0.8', 'sell_now': ''}, {'symbol': 'NT2', 'total_trading': -100.0, 'phi': -2775.0, 'thue': -2775.0, 'PNL': 2772225.0, 'avg_buy_price': '', 'avg_sell_price': '27750', 'current_price': 28200.0, 'buy_now': '-1.6', 'sell_now': ''}];
+        var table_2_records = [{'symbol': 'HSG', 'total_trading': -400.0, 'phi': -7270.0, 'thue': -6120.0, 'PNL': 4962730.0, 'avg_buy_price': '11500', 'avg_sell_price': '12240', 'current_price': 12850.0, 'buy_now': '-4.7', 'sell_now': '11.7'}, {'symbol': 'NT2', 'total_trading': -100.0, 'phi': -2775.0, 'thue': -2775.0, 'PNL': 2772225.0, 'avg_buy_price': '', 'avg_sell_price': '27750', 'current_price': 28200.0, 'buy_now': '-1.6', 'sell_now': ''}, {'symbol': 'NDN', 'total_trading': -500.0, 'phi': -3500.0, 'thue': -3500.0, 'PNL': 3496500.0, 'avg_buy_price': '', 'avg_sell_price': '7000', 'current_price': 7000.0, 'buy_now': '0.0', 'sell_now': ''}, {'symbol': 'VPB', 'total_trading': 0.0, 'phi': -6415.0, 'thue': -3225.0, 'PNL': 28585.0, 'avg_buy_price': '15950', 'avg_sell_price': '16125', 'current_price': 17250.0, 'buy_now': '-6.5', 'sell_now': '8.2'}, {'symbol': 'VOS', 'total_trading': 0.0, 'phi': -4430.0, 'thue': -2250.0, 'PNL': 65570.0, 'avg_buy_price': '10900', 'avg_sell_price': '11250', 'current_price': 12050.0, 'buy_now': '-6.6', 'sell_now': '10.6'}, {'symbol': 'PVT', 'total_trading': -200.0, 'phi': -3900.0, 'thue': -3900.0, 'PNL': 3896100.0, 'avg_buy_price': '', 'avg_sell_price': '19500', 'current_price': 19800.0, 'buy_now': '-1.5', 'sell_now': ''}, {'symbol': 'EVE', 'total_trading': -500.0, 'phi': -6950.0, 'thue': -6950.0, 'PNL': 6943050.0, 'avg_buy_price': '', 'avg_sell_price': '13900', 'current_price': 13750.0, 'buy_now': '1.1', 'sell_now': ''}];
 
         $(document).ready(function() {
             $("#table_1").kendoGrid({
@@ -51,7 +51,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T-1 Orders at 2022-12-12 13:19:09.086075", "search"],
+                toolbar: ["TCBS T-1 Orders at 2022-12-12 13:20:10.139726", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
@@ -82,7 +82,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T-3 Orders at 2022-12-12 13:19:09.086075", "search"],
+                toolbar: ["TCBS T-3 Orders at 2022-12-12 13:20:10.139726", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
