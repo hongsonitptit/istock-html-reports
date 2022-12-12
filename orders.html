@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'HDB', 'refer_price': 16800.0, 'total_trading': 100.0, 'phi': -1625, 'thue': -162500, 'PNL': -1626625, 'avg_buy_price': '16250', 'avg_sell_price': '', 'buy_to_basic': '-3.3', 'sell_to_basic': ''}, {'symbol': 'HSG', 'refer_price': 12950.0, 'total_trading': 100.0, 'phi': -1230, 'thue': -123000, 'PNL': -1231230, 'avg_buy_price': '12300', 'avg_sell_price': '', 'buy_to_basic': '-5.0', 'sell_to_basic': ''}, {'symbol': 'MSB', 'refer_price': 13350.0, 'total_trading': 100.0, 'phi': -1290, 'thue': -129000, 'PNL': -1291290, 'avg_buy_price': '12900', 'avg_sell_price': '', 'buy_to_basic': '-3.4', 'sell_to_basic': ''}, {'symbol': 'NDN', 'refer_price': 6800.0, 'total_trading': -300.0, 'phi': -2070, 'thue': -207000, 'PNL': 2067930, 'avg_buy_price': '', 'avg_sell_price': '6900', 'buy_to_basic': '', 'sell_to_basic': '1.5'}, {'symbol': 'VCB', 'refer_price': 77300.0, 'total_trading': -100.0, 'phi': -7990, 'thue': -799000, 'PNL': 7982010, 'avg_buy_price': '', 'avg_sell_price': '79900', 'buy_to_basic': '', 'sell_to_basic': '3.4'}, {'symbol': 'VHM', 'refer_price': 54100.0, 'total_trading': 100.0, 'phi': -15640, 'thue': -1564000, 'PNL': -5235640, 'avg_buy_price': '52150', 'avg_sell_price': '52100', 'buy_to_basic': '-3.6', 'sell_to_basic': '-3.7'}];
+        var aggregate_order_records = [{'symbol': 'HDB', 'refer_price': 16800.0, 'total_trading': 100.0, 'phi': -1625, 'thue': -162500, 'PNL': -1626625, 'avg_buy_price': '16250', 'avg_sell_price': '', 'buy_to_basic': '-3.3', 'sell_to_basic': ''}, {'symbol': 'HSG', 'refer_price': 12950.0, 'total_trading': 200.0, 'phi': -2445, 'thue': -244500, 'PNL': -2447445, 'avg_buy_price': '12225', 'avg_sell_price': '', 'buy_to_basic': '-5.6', 'sell_to_basic': ''}, {'symbol': 'MSB', 'refer_price': 13350.0, 'total_trading': 100.0, 'phi': -1290, 'thue': -129000, 'PNL': -1291290, 'avg_buy_price': '12900', 'avg_sell_price': '', 'buy_to_basic': '-3.4', 'sell_to_basic': ''}, {'symbol': 'NDN', 'refer_price': 6800.0, 'total_trading': -300.0, 'phi': -2070, 'thue': -207000, 'PNL': 2067930, 'avg_buy_price': '', 'avg_sell_price': '6900', 'buy_to_basic': '', 'sell_to_basic': '1.5'}, {'symbol': 'VCB', 'refer_price': 77300.0, 'total_trading': -100.0, 'phi': -7990, 'thue': -799000, 'PNL': 7982010, 'avg_buy_price': '', 'avg_sell_price': '79900', 'buy_to_basic': '', 'sell_to_basic': '3.4'}, {'symbol': 'VHM', 'refer_price': 54100.0, 'total_trading': 100.0, 'phi': -15640, 'thue': -1564000, 'PNL': -5235640, 'avg_buy_price': '52150', 'avg_sell_price': '52100', 'buy_to_basic': '-3.6', 'sell_to_basic': '-3.7'}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2022-12-12 14:21:07.746040", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-12 14:22:07.608527", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
