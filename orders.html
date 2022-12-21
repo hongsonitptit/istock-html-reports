@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 13700.0, 'total_trading': 300.0, 'phi': -3900, 'thue': -390000, 'PNL': -3903900, 'avg_buy_price': '13000', 'avg_sell_price': '', 'buy_to_basic': '-5.1', 'sell_to_basic': ''}, {'symbol': 'PAN', 'refer_price': 16200.0, 'total_trading': 100.0, 'phi': -1570, 'thue': -157000, 'PNL': -1571570, 'avg_buy_price': '15700', 'avg_sell_price': '', 'buy_to_basic': '-3.1', 'sell_to_basic': ''}, {'symbol': 'TCB', 'refer_price': 27700.0, 'total_trading': 200.0, 'phi': -5340, 'thue': -534000, 'PNL': -5345340, 'avg_buy_price': '26700', 'avg_sell_price': '', 'buy_to_basic': '-3.6', 'sell_to_basic': ''}, {'symbol': 'VOS', 'refer_price': 11250.0, 'total_trading': 100.0, 'phi': -1065, 'thue': -106500, 'PNL': -1066065, 'avg_buy_price': '10650', 'avg_sell_price': '', 'buy_to_basic': '-5.3', 'sell_to_basic': ''}];
+        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 13700.0, 'total_trading': 300.0, 'phi': -3900, 'thue': -390000, 'PNL': -3903900, 'avg_buy_price': '13000', 'avg_sell_price': '', 'buy_to_basic': '-5.1', 'sell_to_basic': ''}, {'symbol': 'PAN', 'refer_price': 16200.0, 'total_trading': 100.0, 'phi': -1570, 'thue': -157000, 'PNL': -1571570, 'avg_buy_price': '15700', 'avg_sell_price': '', 'buy_to_basic': '-3.1', 'sell_to_basic': ''}, {'symbol': 'TCB', 'refer_price': 27700.0, 'total_trading': 200.0, 'phi': -5340, 'thue': -534000, 'PNL': -5345340, 'avg_buy_price': '26700', 'avg_sell_price': '', 'buy_to_basic': '-3.6', 'sell_to_basic': ''}, {'symbol': 'VOS', 'refer_price': 11250.0, 'total_trading': 200.0, 'phi': -2120, 'thue': -212000, 'PNL': -2122120, 'avg_buy_price': '10600', 'avg_sell_price': '', 'buy_to_basic': '-5.8', 'sell_to_basic': ''}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2022-12-21 13:54:08.096972", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-21 13:55:10.248506", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
