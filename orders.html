@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'FUESSV30', 'refer_price': 12600.0, 'total_trading': -100.0, 'phi': -1285, 'thue': -128500, 'PNL': 1283715, 'avg_buy_price': '', 'avg_sell_price': '12850', 'buy_to_basic': '', 'sell_to_basic': '2.0'}, {'symbol': 'VPB', 'refer_price': 17650.0, 'total_trading': -200.0, 'phi': -3735, 'thue': -373500, 'PNL': 3731265, 'avg_buy_price': '', 'avg_sell_price': '18675', 'buy_to_basic': '', 'sell_to_basic': '5.8'}];
+        var aggregate_order_records = [{'symbol': 'FUESSV30', 'refer_price': 12600.0, 'total_trading': -100.0, 'phi': -1285, 'thue': -128500, 'PNL': 1283715, 'avg_buy_price': '', 'avg_sell_price': '12850', 'buy_to_basic': '', 'sell_to_basic': '2.0'}, {'symbol': 'FUESSVFL', 'refer_price': 14650.0, 'total_trading': -100.0, 'phi': -1506, 'thue': -150600, 'PNL': 1504494, 'avg_buy_price': '', 'avg_sell_price': '15060', 'buy_to_basic': '', 'sell_to_basic': '2.8'}, {'symbol': 'VPB', 'refer_price': 17650.0, 'total_trading': -200.0, 'phi': -3735, 'thue': -373500, 'PNL': 3731265, 'avg_buy_price': '', 'avg_sell_price': '18675', 'buy_to_basic': '', 'sell_to_basic': '5.8'}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2022-12-22 10:48:07.296875", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-22 10:49:07.487651", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
