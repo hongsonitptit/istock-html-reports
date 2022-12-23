@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'FUESSV30', 'refer_price': 12600.0, 'total_trading': -200.0, 'phi': -2576, 'thue': -2576.0, 'PNL': 2573424, 'avg_buy_price': '', 'avg_sell_price': '12880', 'buy_to_basic': '', 'sell_to_basic': '2.2'}, {'symbol': 'FUESSVFL', 'refer_price': 14650.0, 'total_trading': -200.0, 'phi': -3013, 'thue': -3013.0, 'PNL': 3009987, 'avg_buy_price': '', 'avg_sell_price': '15065', 'buy_to_basic': '', 'sell_to_basic': '2.8'}, {'symbol': 'PVT', 'refer_price': 20600.0, 'total_trading': -100.0, 'phi': -2150, 'thue': -2150.0, 'PNL': 2147850, 'avg_buy_price': '', 'avg_sell_price': '21500', 'buy_to_basic': '', 'sell_to_basic': '4.4'}, {'symbol': 'VPB', 'refer_price': 17650.0, 'total_trading': -200.0, 'phi': -3735, 'thue': -3735.0, 'PNL': 3731265, 'avg_buy_price': '', 'avg_sell_price': '18675', 'buy_to_basic': '', 'sell_to_basic': '5.8'}];
+        var aggregate_order_records = [];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -33,7 +33,7 @@
                     data: aggregate_order_records,
                     //pageSize: 5,
                     schema: {
-                        model: {'fields': {'symbol': {}, 'refer_price': {'type': 'number'}, 'total_trading': {'type': 'number'}, 'phi': {'type': 'number'}, 'thue': {'type': 'number'}, 'PNL': {'type': 'number'}, 'avg_buy_price': {}, 'avg_sell_price': {}, 'buy_to_basic': {}, 'sell_to_basic': {}}}
+                        model: {'fields': {}}
                     },
                     aggregate: [{'field': 'PNL', 'aggregate': 'sum'}, {'field': 'phi', 'aggregate': 'sum'}, {'field': 'thue', 'aggregate': 'sum'}, {'field': 'total_trading', 'aggregate': 'sum'}]
                 },
@@ -48,13 +48,13 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2022-12-22 16:59:06.910961", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-23 08:00:11.348051", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
                     ]
                 },
-                columns: [{'field': 'symbol', 'title': 'symbol', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'refer_price', 'title': 'refer_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(refer_price)#'}, {'field': 'total_trading', 'title': 'total_trading', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_trading)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'phi', 'title': 'phi', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(phi)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'thue', 'title': 'thue', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(thue)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'PNL', 'title': 'PNL', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(PNL)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'avg_buy_price', 'title': 'avg_buy_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'avg_sell_price', 'title': 'avg_sell_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'buy_to_basic', 'title': 'buy_to_basic', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'sell_to_basic', 'title': 'sell_to_basic', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}],
+                columns: [],
             });
         });
 
