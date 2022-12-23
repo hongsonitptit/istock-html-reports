@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 12550.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -1200, 'thue': -120000, 'PNL': -1201200, 'avg_buy_price': '12000', 'avg_sell_price': '', 'buy_to_basic': '-4.4', 'sell_to_basic': ''}];
+        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 12550.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0, 'phi': -2390, 'thue': -239000, 'PNL': -2392390, 'avg_buy_price': '11950', 'avg_sell_price': '', 'buy_to_basic': '-4.8', 'sell_to_basic': ''}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2022-12-23 10:56:07.260775", "search"],
+                toolbar: ["TCBS T0 Orders at 2022-12-23 10:57:07.366255", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
