@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 12350.0, 'total_trading': -300.0, 'total_buy': 0.0, 'total_sell': -300.0, 'phi': -3780, 'thue': -3780.0, 'PNL': 3776220, 'avg_buy_price': '', 'avg_sell_price': '12600', 'buy_to_basic': '', 'sell_to_basic': '2.0'}, {'symbol': 'VOS', 'refer_price': 11800.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0.0, 'phi': -2280, 'thue': 0.0, 'PNL': -2282280, 'avg_buy_price': '11400', 'avg_sell_price': '', 'buy_to_basic': '-3.4', 'sell_to_basic': ''}];
+        var aggregate_order_records = [{'symbol': 'HSG', 'refer_price': 12350.0, 'total_trading': -500.0, 'total_buy': 0.0, 'total_sell': -500.0, 'phi': -6300, 'thue': -6300.0, 'PNL': 6293700, 'avg_buy_price': '', 'avg_sell_price': '12600', 'buy_to_basic': '', 'sell_to_basic': '2.0'}, {'symbol': 'VOS', 'refer_price': 11800.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0.0, 'phi': -2280, 'thue': 0.0, 'PNL': -2282280, 'avg_buy_price': '11400', 'avg_sell_price': '', 'buy_to_basic': '-3.4', 'sell_to_basic': ''}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2023-01-04 14:07:06.819606", "search"],
+                toolbar: ["TCBS T0 Orders at 2023-01-04 14:08:07.275829", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
