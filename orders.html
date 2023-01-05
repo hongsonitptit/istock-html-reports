@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'SVT', 'refer_price': 10850.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -1050, 'thue': 0, 'PNL': -1051050, 'avg_buy_price': '10500', 'avg_sell_price': '', 'buy_to_basic': '-3.2', 'sell_to_basic': ''}];
+        var aggregate_order_records = [{'symbol': 'PVT', 'refer_price': 22500.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -2180, 'thue': 0, 'PNL': -2182180, 'avg_buy_price': '21800', 'avg_sell_price': '', 'buy_to_basic': '-3.1', 'sell_to_basic': ''}, {'symbol': 'SVT', 'refer_price': 10850.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -1050, 'thue': 0, 'PNL': -1051050, 'avg_buy_price': '10500', 'avg_sell_price': '', 'buy_to_basic': '-3.2', 'sell_to_basic': ''}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2023-01-05 10:32:07.527871", "search"],
+                toolbar: ["TCBS T0 Orders at 2023-01-05 10:33:07.892511", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
