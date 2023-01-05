@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'PVT', 'refer_price': 22500.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0, 'phi': -4340, 'thue': 0, 'PNL': -4344340, 'avg_buy_price': '21700', 'avg_sell_price': '', 'buy_to_basic': '-3.6', 'sell_to_basic': ''}, {'symbol': 'SVT', 'refer_price': 10850.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -1050, 'thue': 0, 'PNL': -1051050, 'avg_buy_price': '10500', 'avg_sell_price': '', 'buy_to_basic': '-3.2', 'sell_to_basic': ''}];
+        var aggregate_order_records = [{'symbol': 'NDN', 'refer_price': 7000.0, 'total_trading': -300.0, 'total_buy': 0.0, 'total_sell': -300.0, 'phi': -2160, 'thue': -2160.0, 'PNL': 2157840, 'avg_buy_price': '', 'avg_sell_price': '7200', 'buy_to_basic': '', 'sell_to_basic': '2.9'}, {'symbol': 'PVT', 'refer_price': 22500.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0.0, 'phi': -4340, 'thue': 0.0, 'PNL': -4344340, 'avg_buy_price': '21700', 'avg_sell_price': '', 'buy_to_basic': '-3.6', 'sell_to_basic': ''}, {'symbol': 'SVT', 'refer_price': 10850.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0.0, 'phi': -1050, 'thue': 0.0, 'PNL': -1051050, 'avg_buy_price': '10500', 'avg_sell_price': '', 'buy_to_basic': '-3.2', 'sell_to_basic': ''}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2023-01-05 14:07:08.587267", "search"],
+                toolbar: ["TCBS T0 Orders at 2023-01-05 14:08:07.967460", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
