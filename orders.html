@@ -25,7 +25,7 @@
 
     <script>
         // sample datasource
-        var aggregate_order_records = [{'symbol': 'PVT', 'refer_price': 21800.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -633.0, 'thue': 0, 'PNL': -2110633.0, 'avg_buy_price': '21100', 'avg_sell_price': '', 'buy_to_basic': '-3.2', 'sell_to_basic': ''}, {'symbol': 'VNL', 'refer_price': 21650.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0, 'phi': -1252.5, 'thue': 0, 'PNL': -4176252.5, 'avg_buy_price': '20875', 'avg_sell_price': '', 'buy_to_basic': '-3.6', 'sell_to_basic': ''}, {'symbol': 'VOS', 'refer_price': 11550.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0, 'phi': -666.0, 'thue': 0, 'PNL': -2220666.0, 'avg_buy_price': '11100', 'avg_sell_price': '', 'buy_to_basic': '-3.9', 'sell_to_basic': ''}];
+        var aggregate_order_records = [{'symbol': 'PVT', 'refer_price': 21800.0, 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0, 'phi': -633.0, 'thue': 0, 'PNL': -2110633.0, 'avg_buy_price': '21100', 'avg_sell_price': '', 'buy_to_basic': '-3.2', 'sell_to_basic': ''}, {'symbol': 'VNL', 'refer_price': 21650.0, 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0, 'phi': -1252.5, 'thue': 0, 'PNL': -4176252.5, 'avg_buy_price': '20875', 'avg_sell_price': '', 'buy_to_basic': '-3.6', 'sell_to_basic': ''}, {'symbol': 'VOS', 'refer_price': 11550.0, 'total_trading': 300.0, 'total_buy': 300.0, 'total_sell': 0, 'phi': -994.5, 'thue': 0, 'PNL': -3315994.5, 'avg_buy_price': '11050', 'avg_sell_price': '', 'buy_to_basic': '-4.3', 'sell_to_basic': ''}];
 
         $(document).ready(function() {
             $("#aggregate_order_table").kendoGrid({
@@ -48,7 +48,7 @@
                         this.autoFitColumn(i);
                     }
                 },
-                toolbar: ["TCBS T0 Orders at 2023-01-06 13:26:09.161425", "search"],
+                toolbar: ["TCBS T0 Orders at 2023-01-06 13:27:08.870736", "search"],
                 search: {
                     fields: [
                         { name: "symbol", operator: "contains" },
