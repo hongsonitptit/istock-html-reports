@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>History Orders</title>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.2.621/styles/kendo.default-v2.min.css" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.2.621/js/kendo.all.min.js"></script>
+</head>
+
+<body>
+
+    <style>
+        .k-grid {
+            /* width: 500px; */
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+    <div id="table_1"></div>
+    </br>
+    <div id="table_2"></div>
+
+    <script>
+        // sample datasource
+        var table_1_records = [{'symbol': 'VCB', 'total_trading': 300.0, 'total_buy': 300.0, 'total_sell': 0.0, 'phi': -7782.0, 'thue': 0.0, 'PNL': -25947782.0, 'avg_buy_price': '86467', 'avg_sell_price': '', 'current_price': 85800.0, 'buy_now': 0.0, 'sell_now': -0.8}, {'symbol': 'VNL', 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0.0, 'phi': -606.0, 'thue': 0.0, 'PNL': -2020606.0, 'avg_buy_price': '20200', 'avg_sell_price': '', 'current_price': 20900.0, 'buy_now': 0.0, 'sell_now': 3.5}, {'symbol': 'VHM', 'total_trading': -100.0, 'total_buy': 0.0, 'total_sell': -100.0, 'phi': -1554.0, 'thue': -5180.0, 'PNL': 5178446.0, 'avg_buy_price': '', 'avg_sell_price': '51800', 'current_price': 52000.0, 'buy_now': -0.4, 'sell_now': 0.0}];
+        var table_2_records = [{'symbol': 'VCB', 'total_trading': 0.0, 'total_buy': 400.0, 'total_sell': -400.0, 'phi': -20946.0, 'thue': -35150.0, 'PNL': 459054.0, 'avg_buy_price': '86675', 'avg_sell_price': '87875', 'current_price': 85800.0, 'buy_now': 2.4, 'sell_now': -1.0}, {'symbol': 'VNL', 'total_trading': 300.0, 'total_buy': 300.0, 'total_sell': 0.0, 'phi': -1858.0, 'thue': 0.0, 'PNL': -6196858.0, 'avg_buy_price': '20650', 'avg_sell_price': '', 'current_price': 20900.0, 'buy_now': 0.0, 'sell_now': 1.2}, {'symbol': 'PAN', 'total_trading': -500.0, 'total_buy': 0.0, 'total_sell': -500.0, 'phi': -2425.0, 'thue': -8085.0, 'PNL': 8082575.0, 'avg_buy_price': '', 'avg_sell_price': '16170', 'current_price': 16149.999999999998, 'buy_now': 0.1, 'sell_now': 0.0}, {'symbol': 'NT2', 'total_trading': 100.0, 'total_buy': 100.0, 'total_sell': 0.0, 'phi': -835.0, 'thue': 0.0, 'PNL': -2785835.0, 'avg_buy_price': '27850', 'avg_sell_price': '', 'current_price': 28600.0, 'buy_now': 0.0, 'sell_now': 2.7}, {'symbol': 'VOS', 'total_trading': 100.0, 'total_buy': 500.0, 'total_sell': -400.0, 'phi': -2949.0, 'thue': -4360.0, 'PNL': -1117949.0, 'avg_buy_price': '10950', 'avg_sell_price': '10900', 'current_price': 10300.0, 'buy_now': 5.8, 'sell_now': -5.9}, {'symbol': 'PVT', 'total_trading': 0.0, 'total_buy': 400.0, 'total_sell': -400.0, 'phi': -5191.0, 'thue': -8720.0, 'PNL': 129809.0, 'avg_buy_price': '21462', 'avg_sell_price': '21800', 'current_price': 20400.0, 'buy_now': 6.9, 'sell_now': -4.9}, {'symbol': 'HSG', 'total_trading': 200.0, 'total_buy': 200.0, 'total_sell': 0.0, 'phi': -763.0, 'thue': 0.0, 'PNL': -2545763.0, 'avg_buy_price': '12725', 'avg_sell_price': '', 'current_price': 13100.0, 'buy_now': 0.0, 'sell_now': 2.9}, {'symbol': 'SVT', 'total_trading': 0.0, 'total_buy': 100.0, 'total_sell': -100.0, 'phi': -639.0, 'thue': -1080.0, 'PNL': 29361.0, 'avg_buy_price': '10500', 'avg_sell_price': '10800', 'current_price': 11500.0, 'buy_now': -6.1, 'sell_now': 9.5}, {'symbol': 'NDN', 'total_trading': -300.0, 'total_buy': 0.0, 'total_sell': -300.0, 'phi': -648.0, 'thue': -2160.0, 'PNL': 2159352.0, 'avg_buy_price': '', 'avg_sell_price': '7200', 'current_price': 6800.0, 'buy_now': 5.9, 'sell_now': 0.0}, {'symbol': 'VHM', 'total_trading': -100.0, 'total_buy': 0.0, 'total_sell': -100.0, 'phi': -1554.0, 'thue': -5180.0, 'PNL': 5178446.0, 'avg_buy_price': '', 'avg_sell_price': '51800', 'current_price': 52000.0, 'buy_now': -0.4, 'sell_now': 0.0}];
+
+        $(document).ready(function() {
+            $("#table_1").kendoGrid({
+                dataSource: {
+                    data: table_1_records,
+                    //pageSize: 5,
+                    schema: {
+                        model: {'fields': {'symbol': {}, 'total_trading': {'type': 'number'}, 'total_buy': {'type': 'number'}, 'total_sell': {'type': 'number'}, 'phi': {'type': 'number'}, 'thue': {'type': 'number'}, 'PNL': {'type': 'number'}, 'avg_buy_price': {}, 'avg_sell_price': {}, 'current_price': {'type': 'number'}, 'buy_now': {'type': 'number'}, 'sell_now': {'type': 'number'}}}
+                    },
+                    aggregate: [{'field': 'PNL', 'aggregate': 'sum'}, {'field': 'phi', 'aggregate': 'sum'}, {'field': 'thue', 'aggregate': 'sum'}, {'field': 'total_trading', 'aggregate': 'sum'}]
+                },
+                //sortable: true,
+                //pageable: true,
+                filterable: true,
+                sortable: {
+                    mode: "multiple"
+                },
+                dataBound: function() {
+                    for (var i = 0; i < this.columns.length; i++) {
+                        this.autoFitColumn(i);
+                    }
+                },
+                toolbar: ["TCBS T-1 Orders at 2023-01-13 16:31:08.072002", "search"],
+                search: {
+                    fields: [
+                        { name: "symbol", operator: "contains" },
+                    ]
+                },
+                columns: [{'field': 'symbol', 'title': 'symbol', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'total_trading', 'title': 'total_trading', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_trading)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'total_buy', 'title': 'total_buy', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_buy)#'}, {'field': 'total_sell', 'title': 'total_sell', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_sell)#'}, {'field': 'phi', 'title': 'phi', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(phi)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'thue', 'title': 'thue', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(thue)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'PNL', 'title': 'PNL', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(PNL)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'avg_buy_price', 'title': 'avg_buy_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'avg_sell_price', 'title': 'avg_sell_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'current_price', 'title': 'current_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(current_price)#'}, {'field': 'buy_now', 'title': 'buy_now', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(buy_now)#'}, {'field': 'sell_now', 'title': 'sell_now', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(sell_now)#'}],
+            });
+        });
+
+        $(document).ready(function() {
+            $("#table_2").kendoGrid({
+                dataSource: {
+                    data: table_2_records,
+                    //pageSize: 5,
+                    schema: {
+                        model: {'fields': {'symbol': {}, 'total_trading': {'type': 'number'}, 'total_buy': {'type': 'number'}, 'total_sell': {'type': 'number'}, 'phi': {'type': 'number'}, 'thue': {'type': 'number'}, 'PNL': {'type': 'number'}, 'avg_buy_price': {}, 'avg_sell_price': {}, 'current_price': {'type': 'number'}, 'buy_now': {'type': 'number'}, 'sell_now': {'type': 'number'}}}
+                    },
+                    aggregate: [{'field': 'PNL', 'aggregate': 'sum'}, {'field': 'phi', 'aggregate': 'sum'}, {'field': 'thue', 'aggregate': 'sum'}, {'field': 'total_trading', 'aggregate': 'sum'}]
+                },
+                //sortable: true,
+                //pageable: true,
+                filterable: true,
+                sortable: {
+                    mode: "multiple"
+                },
+                dataBound: function() {
+                    for (var i = 0; i < this.columns.length; i++) {
+                        this.autoFitColumn(i);
+                    }
+                },
+                toolbar: ["TCBS T-3 Orders at 2023-01-13 16:31:08.072002", "search"],
+                search: {
+                    fields: [
+                        { name: "symbol", operator: "contains" },
+                    ]
+                },
+                columns: [{'field': 'symbol', 'title': 'symbol', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'total_trading', 'title': 'total_trading', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_trading)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'total_buy', 'title': 'total_buy', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_buy)#'}, {'field': 'total_sell', 'title': 'total_sell', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(total_sell)#'}, {'field': 'phi', 'title': 'phi', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(phi)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'thue', 'title': 'thue', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(thue)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'PNL', 'title': 'PNL', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(PNL)#', 'footerTemplate': '#: kendo.format("{0:n0}",sum) #'}, {'field': 'avg_buy_price', 'title': 'avg_buy_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'avg_sell_price', 'title': 'avg_sell_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}}, {'field': 'current_price', 'title': 'current_price', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(current_price)#'}, {'field': 'buy_now', 'title': 'buy_now', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(buy_now)#'}, {'field': 'sell_now', 'title': 'sell_now', 'attributes': {'style': 'text-align: right'}, 'filterable': {'multi': 'true'}, 'format': '{0:n0}', 'template': '#=SetColor(sell_now)#'}],
+            });
+        });
+
+        
+
+        function SetColor(value)
+        {
+            if(value<0)
+                return "<font color=\"red\">"+kendo.format("{0:n1}", value)+"</font>";
+            else if (value>0)
+                return "<font color=\"green\">"+kendo.format("{0:n1}", value)+"</font>";
+            else
+                return value
+        }
+    </script>
+</body>
+
+</html>
